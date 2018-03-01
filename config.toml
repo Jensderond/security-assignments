@@ -1,0 +1,9 @@
+baseURL = "https://secure.jensderond.nl/"
+languageCode = "en-us"
+title = "Security Assignment"
+theme = "kube"
+
+[[menu.main]]
+    name = "Assignments"
+    weight = -100
+    url = "/docs/"
