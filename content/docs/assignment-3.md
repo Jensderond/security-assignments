@@ -31,6 +31,9 @@ toc = false
 The new version of the website uses the [Caddy webserver](https://caddyserver.com/), a webserver with automatic TLS with strong configurations by default. It explicitly excludes soms cipher-suites that are concered as "not secure" today. TLS is automatically configured using the ACME protocol (Let's Encrypt). Caddy handles certificate renewal so that the website always uses a valid certificate. It has even builtin man-in-the-middle (MITM) attack detector that can detect possible website impersonations. *OWASP A6:2017 - Security Misconfiguration*
 
 ### Lock-out policy
+The lock-out policy is used in the application to protect ourselves from attacks on users accounts. 
+Like the iCloud hack back in 2014 there was a possibility to make unlimited attempts to login with user credentials.
+With our lock-out policy users have 3 tries after that, their account will be locked and they need to contact the site admin. *OWASP A2:2017 - Broken Authentication*
 
 ### Input sanitizing
 
@@ -41,6 +44,9 @@ All input from any source goes through a sanitizer. This is a small Express.js m
 All traffic, inbound and outbound, of the webserver is logged in a (distributed) log file in conjunction with a timestamp, (possible) logged-in user, IP adress, complete URI with parameters and critical HTTP headers. *OWASP A10:2017 - Insufficient Logging & Monitoring*
 
 ### Password reset
+Not all hackers take what they need and leave. Occasionally hackers may continue accessing your account, either to monitor your data or continue stealing information over time. It can be difficult to figure out if someone else is using your account, so by changing your password consistently, you reduce the risk that other people will have frequent access to your accounts. Consider changing your password every few months to be on the safe side.
+
+Therefor we encourage our site users to change their password often to remain safe for breaches. This is helped by the function to reset their password in case they forgot a new password because of the different passwords. *OWASP A2:2017 - Broken Authentication*
 
 ### Enhardened HTTPS-configuration
 
