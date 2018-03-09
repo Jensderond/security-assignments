@@ -12,7 +12,7 @@ Assignment 1
 ======
 
 ## Deployment diagram
-_Deployment diagram here_
+### ![image alt text](/img/DeploymentDiagram1.png)
 
 
 ## Use case diagram socialmedia
